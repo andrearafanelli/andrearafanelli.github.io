@@ -1,1 +1,69 @@
+# Configuration of Hugo
+# Guide: https://wowchemy.com/docs/getting-started/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
+title:            A journey always starts with a single step
+mytitle:          Andrea Rafanelli
+description:      Welcome to my website.
+yearstart: 2017
+url:              //andrearafanelli.github.io
+
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+
+owner:
+  name:           Andrea Rafanelli
+  avatar:         photo.jpg.png
+  bio:           #
+  email:          #
+  linkedin: andrea-rafanelli
+  google_scholar: https://scholar.google.com/citations?user=vSrDrMMAAAAJ
+  semantic_scholar: https://www.semanticscholar.org/author/2189578924
+  dblb: https://dblp.org/pid/332/1524.html
+  google_plus: #
+  github: andrearafanelli
+links:
+  - title: Publications
+    url: /publications/
+  - title: Extra
+    url: /extra/
+  - title: Curriculum
+    url: /cv/
+  - title: Contact
+    url: /contact/
+
+timezone:    Europe/Rome
+future:      true
+pygments:    true
+highlighter: rouge
+markdown:    kramdown
+kramdown:
+  extensions: ["strikethrough"]
+
+permalink:   /:categories/:title/
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+  coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
