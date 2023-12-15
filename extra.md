@@ -1,6 +1,5 @@
 ---
 layout: home2
-title: Extra 💻
 ---
 
 ## Hackathons 🏆
