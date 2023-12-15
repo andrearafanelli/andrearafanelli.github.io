@@ -82,12 +82,12 @@
         margin-top: 30px;
         padding: 20px 0;
     }
-         
-	    
-	.bibtex {
+
+     .bibtex {
             display: none;
         }
     </style>
+	
 <script type="text/javascript">
         function toggleBibtex(articleid) {
             var bib = document.getElementById('bib_' + articleid);
@@ -106,6 +106,23 @@
         <header>
             <h1>{{ page.title }}</h1>
         </header>
+	    {% if page.image.feature %}
+            <div class="image-wrap">
+                <img src=
+                    {% if page.image.feature contains 'http://' %}
+                        "{{ page.image.feature }}"
+                    {% elsif page.image.feature contains 'https://' %}
+                        "{{ page.image.feature }}"
+                    {% else %}
+                        "{{ site.url }}/images/{{ page.image.feature }}"
+                    {% endif %}
+                    alt="{{ page.title }} feature image">
+                {% if page.image.credit %}
+                    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+                {% endif %}
+            </div><!-- /.image-wrap -->
+        {% endif %}
+
 
         <article>
             {{ content }}
