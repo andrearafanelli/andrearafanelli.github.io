@@ -5,6 +5,17 @@
 <head>
     {% include _head.html %}
     <style>
+	<script type="text/javascript">
+        function toggleBibtex(articleid) {
+            var bib = document.getElementById('bib_' + articleid);
+            if (bib) {
+                if (bib.className.indexOf('bibtex') != -1) {
+                    bib.style.display = (bib.style.display === 'none' || bib.style.display === '') ? 'block' : 'none';
+                }
+            } else {
+                return;
+            }
+        }
          .container {
             max-width: 800px;
             margin: 0 auto;
