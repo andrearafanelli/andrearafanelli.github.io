@@ -1,4 +1,4 @@
-# my personal website 👩🏻‍🎓
+# my personal website 
 * Url: [https://andrearafanelli.github.io](https://andrearafanelli.github.io). 
 
 * Website based on the
