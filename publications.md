@@ -1,7 +1,7 @@
 ---
 layout: publications
 permalink: /publications/
-title: #
+title: Publications 📓
 tags: [publications]
 modified: 8-7-2014
 comments: false
