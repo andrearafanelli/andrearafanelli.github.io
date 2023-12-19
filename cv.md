@@ -1,5 +1,5 @@
 ---
-layout: home2
+layout: home
 title: My CV 📄 
 tags: [about]
 modified: 8-7-2014
