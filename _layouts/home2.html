@@ -1,118 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include _browser-upgrade.html %}
-{% include _navigation.html %}
+
 <head>
+    {% include _browser-upgrade.html %}
+    {% include _navigation.html %}
     {% include _head.html %}
 
-<body class="page">
-<style>
+    <style>
+        body {
+            background-color: #f4f8fc;
+            color: #333;
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-  body {
-    background-color: #f4f8fc;
-    color: #333;
-    font-family: 'Georgia', sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        .header {
+            background-color: #66c2ff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
-.header {
-    background-color: #66c2ff;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
+        .navbar {
+            background-color: #e6f7ff;
+            padding: 10px;
+        }
 
-.navbar {
-    background-color: #e6f7ff;
-    padding: 10px;
-}
+        .navbar a {
+            color: #333;
+            margin: 0 15px;
+            text-decoration: none;
+        }
 
-.navbar a {
-    color: #333;
-    margin: 0 15px;
-    text-decoration: none;
-}
+        .article-wrap {
+            margin: 20px 0;
+        }
 
-.article-wrap {
-    margin: 20px 0;
-}
+        article h1 {
+            color: #120000;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-article h1 {
-    color: #120000;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
+        .footer-wrap {
+            background-color: #66c2ff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            position: relative; /* Change to relative for better mobile responsiveness */
+            clear: both; /* Clear floating elements */
+        }
+    </style>
 
-.footer-wrap {
-    background-color: #66c2ff;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-}
-</style>
-<script type="text/javascript">
-<!--
-// Toggle Display of BibTeX
-function toggleBibtex(articleid) {
-    var bib = document.getElementById('bib_' + articleid);
-    if (bib) {
-	if (bib.className.indexOf('bibtex') != -1) {
-	    bib.className.indexOf('noshow') == -1 ? bib.className = 'bibtex noshow' : bib.className = 'bibtex';
-	}
-    } else {
-	return;
-    }
-}
--->
-</script>
-{% include _browser-upgrade.html %}
-{% include _navigation.html %}
+    <script type="text/javascript">
+        // Toggle Display of BibTeX
+        function toggleBibtex(articleid) {
+            var bib = document.getElementById('bib_' + articleid);
+            if (bib) {
+                if (bib.className.indexOf('bibtex') != -1) {
+                    bib.className.indexOf('noshow') == -1 ? bib.className = 'bibtex noshow' : bib.className = 'bibtex';
+                }
+            } else {
+                return;
+            }
+        }
+    </script>
 </head>
 
 <body class="page">
-{% if page.image.feature %}
-<div class="image-wrap">
-<img src=
-{% if page.image.feature contains 'http://' %}
-    "{{ page.image.feature }}"
-{% elsif page.image.feature contains 'https://' %}
-    "{{ page.image.feature }}"
-{% else %}
-    "{{ site.url }}/images/{{ page.image.feature }}"
-{% endif %}
-alt="{{ page.title }} feature image">
-{% if page.image.credit %}
-<span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-{% endif %}
-</div><!-- /.image-wrap -->
-{% endif %}
-
-<div id="main" role="main">
-<div class="article-author-side" style="display: inline;">
-    {% include _author-bio.html %}
-</div>
-<article>
-    <h1>{{ page.title }}</h1>
-    <div class="article-wrap">
-	{{ content }}
-    </div><!-- /.article-wrap -->
-    {% if site.disqus_shortname and page.comments %}
-    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    {% if page.image.feature %}
+        <div class="image-wrap">
+            <img src=
+            {% if page.image.feature contains 'http://' %}
+                "{{ page.image.feature }}"
+            {% elsif page.image.feature contains 'https://' %}
+                "{{ page.image.feature }}"
+            {% else %}
+                "{{ site.url }}/images/{{ page.image.feature }}"
+            {% endif %}
+            alt="{{ page.title }} feature image">
+            {% if page.image.credit %}
+                <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+            {% endif %}
+        </div><!-- /.image-wrap -->
     {% endif %}
-</article>
-</div><!-- /#index -->
 
-<div class="footer-wrap">
-<footer>
-    {% include _footer.html %}
-</footer>
-</div><!-- /.footer-wrap -->
+    <div id="main" role="main">
+        <div class="article-author-side" style="display: inline;">
+            {% include _author-bio.html %}
+        </div>
+        <article>
+            <h1>{{ page.title }}</h1>
+            <div class="article-wrap">
+                {{ content }}
+            </div><!-- /.article-wrap -->
+            {% if site.disqus_shortname and page.comments %}
+                <section id="disqus_thread"></section><!-- /#disqus_thread -->
+            {% endif %}
+        </article>
+    </div><!-- /#index -->
 
-{% include _scripts.html %}
+    <div class="footer-wrap">
+        <footer>
+            {% include _footer.html %}
+        </footer>
+    </div><!-- /.footer-wrap -->
 
+    {% include _scripts.html %}
 </body>
 
 </html>
