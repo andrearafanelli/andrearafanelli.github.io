@@ -1,12 +1,5 @@
-# Configuration of Hugo
-# Guide: https://wowchemy.com/docs/getting-started/
-# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
-
 title:            A journey always starts with a single step
 mytitle:          Andrea Rafanelli
-description:      Welcome to my website.
-yearstart: 2017
 url:              //andrearafanelli.github.io
 
 
@@ -23,16 +16,11 @@ removePathAccents: true
 owner:
   name:           Andrea Rafanelli
   avatar:         photo.jpg.png
-  bio:           #
-  email:          #
   linkedin: andrea-rafanelli
-  google_plus: #
   github: andrearafanelli
 links:
   - title: Publications
     url: /publications/
-  - title: Extra
-    url: /extra/
   - title: Curriculum
     url: /cv/
   - title: Contact
