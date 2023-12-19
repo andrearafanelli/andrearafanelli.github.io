@@ -14,17 +14,11 @@ I obtained my master's degree in Data Analytics from the [**Catholic University 
 * <span style="color:#1399c1"> **Robustness**: </span>  real-world robust learning systems.
 <br/>
 
-## Tech Skills 💻
-<img src="../images/python.svg" width="50" height="50"> <img src="../images/pytorch.png" width="50" height="50"> <img src="../images/tf.png" width="50" height="50"> <img src="../images/r-project.svg" width="50" height="50"> <img src="../images/prolog.png" width="50" height="50"> 
-<br/>
-<br/>
-
 ## Hackathons 🏆
 * [<span style="color:#1399c1"> **Covid CXR hackathon**</span>](https://ai4covid-hackathon.it/): design an algorithm to support medical doctor to formulate a Covid-19 prognosis from chest X-ray images and clinical data collected during triage, 2022.
 * [<span style="color:#1399c1"> **Dynamic Pricing competition**</span>](https://dynamic-pricing-competition.com/): build an RL algorithm that is able to vary prices and compete with other algorithms by incorporating the information received on a simulated market, 2020.
 * [<span style="color:#1399c1"> **Hackathon Stats Under the Stars 5**</span>](https://www.sus5.unibocconi.eu/): analysis of a real-world analytics problem, provided by Generali Assicurazioni, 2019.
 
-<br/>
 <br/>
 
 ## Moocs  📖
@@ -34,3 +28,7 @@ I obtained my master's degree in Data Analytics from the [**Catholic University 
 * [<span style="color:#1399c1"> **Deep Learning A-Z: Hands-on Artificial Neural Network**</span>](publications/certifications/dl.pdf), Udemy, 2019.
 <br/>
 <br/>
+
+## Tech Skills 💻
+<img src="../images/python.svg" width="50" height="50"> <img src="../images/pytorch.png" width="50" height="50"> <img src="../images/tf.png" width="50" height="50"> <img src="../images/r-project.svg" width="50" height="50"> <img src="../images/prolog.png" width="50" height="50"> 
+
