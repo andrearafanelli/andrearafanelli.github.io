@@ -1,5 +1,5 @@
 ---
-layout: home2
+layout: home
 permalink: /contact/
 title: Contact 📮
 tags: [contact]
