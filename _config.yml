@@ -19,8 +19,8 @@ owner:
   linkedin: andrea-rafanelli
   github: andrearafanelli
 links:
-  - title: Publications
-    url: /publications/
+  #- title: Publications
+  #  url: /publications/
   - title: Curriculum
     url: /cv/
   - title: Contact
