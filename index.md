@@ -1,7 +1,7 @@
 ---
 layout: home
 ---
-I am a Ph.D. student in Artificial Intelligence at the [**University of Pisa**](https://phd-ai-society.di.unipi.it/students/andrea-rafanelli/).
+I am a Ph.D. candidate in Artificial Intelligence at the [**University of Pisa**](https://phd-ai-society.di.unipi.it/students/andrea-rafanelli/).
 I actively collaborate with the [**Department of Computer Science, Engineering, and Mathematics (DISIM)**](https://www.disim.univaq.it) of the University of l'Aquila and the [**Department of Computer Science and Engineering (DISI)**](https://apice.unibo.it/xwiki/bin/view/AndreaRafanelli/) of the University of Bologna.
 <br/>
 
