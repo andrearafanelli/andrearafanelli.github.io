@@ -8,9 +8,8 @@ profile:
   align: left
   image: Andrea.png
   image_circular: false 
-  <p> a.rafanelli@amsterdamumc.nl </p>
+ # <p> a.rafanelli@amsterdamumc.nl </p>
   #<p> [My CV](assets/PDF/Curriculum_.pdf) </p>
-  
   #  <p>Your City, State 12345</p>
 
 #selected_papers: true # includes a list of papers marked as "selected={true}"
