@@ -7,10 +7,9 @@ subtitle: A journey of a thousand miles begins with a single step.
 profile:
   align: left
   image: Andrea.png
-  image_circular: true # crops the image to make it circular
-  #more_info: >
-  #  <p>555 your office number</p>
-  #  <p>123 your address street</p>
+  image_circular: false 
+  a.rafanelli@amsterdamumc.nl
+  [My CV](assets/PDF/Curriculum_.pdf)
   #  <p>Your City, State 12345</p>
 
 #selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -19,9 +18,9 @@ social: true # includes social icons at the bottom of the page
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: 15 # leave blank to include all the news in the `_news` folder
 ---
-<div style="margin-top: 3rem;"></div>
+<div style="margin-top: 6rem;"></div>
 
 Andrea Rafanelli is a postdoc researcher at **[Amsterdam UMC](https://www.amc.nl/web/home.htm)**.
 She obtained her Ph.D. degree in Artificial Intelligence on Febraury 2025, from **[University of Pisa](https://phd-ai-society.di.unipi.it/students/andrea-rafanelli/)**. During her Ph.D., she actively collaborate with the **[Department of Computer Science, Engineering, and Mathematics (DISIM)](https://www.disim.univaq.it)** of the University of l'Aquila and the **[Department of Computer Science and Engineering (DISI)](https://apice.unibo.it/xwiki/bin/view/AndreaRafanelli/)** of the University of Bologna.
