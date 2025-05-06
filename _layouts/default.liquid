@@ -13,6 +13,14 @@
       <meta http-equiv="refresh" content="3; url={{ redirect }}">
     {% endif %}
     {% include head.liquid %}
+    {% if page.layout != "about" %}
+      <style>
+        .post-title,
+        .post-description {
+          display: none;
+        }
+      </style>
+  {% endif %}
   </head>
 
   <!-- Body -->

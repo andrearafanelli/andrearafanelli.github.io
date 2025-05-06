@@ -20,6 +20,11 @@ layout: default
 
   {% if page.related_publications %}
     <h2>References</h2>
+    <style>
+    .publications .title {
+      color: #13c1a1 ; 
+      }
+    </style>
     <div class="publications">
       {% bibliography --cited_in_order %}
     </div>
