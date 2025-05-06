@@ -14,7 +14,7 @@ nav_order: 2
 
 ### Certifications and Summer Schools 📜
   - **[23rd European Agent Systems Summer School](https://drive.google.com/file/d/15ehsh5YJFVRAL8gWBC2UYTs6tnW7WroR/view?usp=sharing)**, Prague, July 2023.
-  - **[ESSAI \& ACAI 2023](https://drive.google.com/file/d/1IPnx2RDtuPvJ4Jc8SYhzzayl0kWEutVH/view?usp=sharing)**, Lubljana, July 2023.
+  - **[ESSAI & ACAI 2023](https://drive.google.com/file/d/1IPnx2RDtuPvJ4Jc8SYhzzayl0kWEutVH/view?usp=sharing)**, Lubljana, July 2023.
   - **[Neuro-Symbolic AI Essentials](https://www.credly.com/badges/ab083fa4-fd5c-4576-a03d-81fbf0c2084c/public_url)**, IBM, February 2023.
   - **[Models, Algorithms, AI and Beyond](https://drive.google.com/file/d/1InWR6sUtUjfYzDKIvqmtptV5OYQMfMsr/view?usp=sharing)**, Jacob T. Schwartz International School for Scientific Research, July 2022.
   - **[Reinforcement Learning in Python](https://www.udemy.com/certificate/UC-44e972b7-b2c5-4954-9e66-d1345e94c106/)**, Udemy, April 2020.
