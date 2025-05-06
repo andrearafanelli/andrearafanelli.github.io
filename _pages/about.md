@@ -8,10 +8,16 @@ profile:
   align: left
   image: Andrea.png
   image_circular: false 
-  #<p> [My CV](assets/PDF/Curriculum_.pdf) </p>
-# <p>Your City, State 12345</p>
 
-#selected_papers: true # includes a list of papers marked as "selected={true}"
+<div class="contact-links" style="margin-top: 1rem; font-size: 1rem;">
+  <p>
+    📧 <a href="mailto:a.rafanelli@amsterdamumc.nl" target="_blank">Email me</a>
+  </p>
+  <p>
+    📄 <a href="/assets/pdf/Curriculum.pdf" target="_blank">My CV and experience</a>
+  </p>
+</div>
+
 social: true # includes social icons at the bottom of the page
 
 announcements:
