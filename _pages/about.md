@@ -9,14 +9,6 @@ profile:
   image: Andrea.png
   image_circular: false 
 
-<div class="contact-links" style="margin-top: 1rem; font-size: 1rem;">
-  <p>
-    📧 <a href="mailto:a.rafanelli@amsterdamumc.nl" target="_blank">Email me</a>
-  </p>
-  <p>
-    📄 <a href="/assets/pdf/Curriculum.pdf" target="_blank">My CV and experience</a>
-  </p>
-</div>
 
 social: true # includes social icons at the bottom of the page
 
@@ -26,6 +18,15 @@ announcements:
   limit: 15 # leave blank to include all the news in the `_news` folder
 ---
 <div style="margin-top: 2rem;"></div> 
+
+<div class="contact-links" style="margin-top: 1rem; font-size: 1rem;">
+  <p>
+    📧 <a href="mailto:a.rafanelli@amsterdamumc.nl" target="_blank">Email me</a>
+  </p>
+  <p>
+    📄 <a href="/assets/pdf/Curriculum.pdf" target="_blank">Curriculum</a>
+  </p>
+</div>
 
 Andrea Rafanelli is a postdoc researcher at **[Amsterdam UMC](https://www.amc.nl/web/home.htm)**.
 She obtained her Ph.D. degree in Artificial Intelligence on Febraury 2025, from **[University of Pisa](https://phd-ai-society.di.unipi.it/students/andrea-rafanelli/)**. During her Ph.D., she actively collaborate with the **[Department of Computer Science, Engineering, and Mathematics (DISIM)](https://www.disim.univaq.it)** of the University of l'Aquila and the **[Department of Computer Science and Engineering (DISI)](https://apice.unibo.it/xwiki/bin/view/AndreaRafanelli/)** of the University of Bologna.
