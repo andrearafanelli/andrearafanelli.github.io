@@ -30,16 +30,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+        },{id: "news-i-defended-my-phd-thesis-with-the-title-towards-an-integration-of-learning-and-reasoning-in-agent-and-multi-agent-systems-sparkles",
+          title: 'I defended my PhD thesis, with the title Towards an Integration of Learning...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2.html";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-i-started-my-postdoc-at-amsterdam-umc",
+          title: 'I started my Postdoc at @Amsterdam UMC 😊',
           description: "",
           section: "News",},{
         id: 'social-email',
