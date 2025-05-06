@@ -19,16 +19,18 @@ announcements:
 ---
 <div style="margin-top: 2rem;"></div> 
 
-<div class="contact-links" style="margin-top: 1rem; font-size: 1rem;">
-  <p>
-    📧 <a href="mailto:a.rafanelli@amsterdamumc.nl" target="_blank">Email me</a>
-  </p>
-  <p>
-    📄 <a href="/assets/pdf/Curriculum.pdf" target="_blank">Curriculum</a>
-  </p>
-</div>
 
 Andrea Rafanelli is a postdoc researcher at **[Amsterdam UMC](https://www.amc.nl/web/home.htm)**.
 She obtained her Ph.D. degree in Artificial Intelligence on Febraury 2025, from **[University of Pisa](https://phd-ai-society.di.unipi.it/students/andrea-rafanelli/)**. During her Ph.D., she actively collaborate with the **[Department of Computer Science, Engineering, and Mathematics (DISIM)](https://www.disim.univaq.it)** of the University of l'Aquila and the **[Department of Computer Science and Engineering (DISI)](https://apice.unibo.it/xwiki/bin/view/AndreaRafanelli/)** of the University of Bologna.
 From November 2023 to May 2024, she was visiting student at the **[Learning and Reasoning](https://lr.cs.vu.nl/about/people)** at the Vrije Universiteit of Amsterdam. 
 <br/>
+
+
+<div class="contact-links" style="margin-top: 1rem; font-size: 1rem;">
+  <p>
+    📧 <a href="mailto:a.rafanelli@amsterdamumc.nl" target="_blank">**Email me**</a>
+  </p>
+  <p>
+    📄 <a href="/assets/pdf/Curriculum.pdf" target="_blank">**Curriculum**</a>
+  </p>
+</div>
