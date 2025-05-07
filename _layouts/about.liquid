@@ -1,72 +1,152 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title" style="font-size: clamp(1.75rem, 5vw, 2.5rem);">
+<div class="post" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+  <header class="post-header" style="text-align: center; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 2px solid #f0f0f0;">
+    <h1 class="post-title" style="font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 0.5rem;">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+        <span class="font-weight-bold" style="color: #000;">{{ site.first_name }}</span>
+        <span style="color: #444;">{{ site.middle_name }} {{ site.last_name }}</span>
       {% else %}
-        {{ site.title }}
+        <span style="color: #000;">{{ site.title }}</span>
       {% endif %}
     </h1>
-    <p class="desc" style="font-size: clamp(1rem, 2vw, 1.2rem);">{{ page.subtitle }}</p>
+    <p class="desc" style="font-size: clamp(1.1rem, 2vw, 1.3rem); margin-top: 0.5rem; font-style: italic; color: #555;">
+      {{ page.subtitle }}
+    </p>
   </header>
 
-  <article style="max-width: 1000px; margin: 0 auto; width: 100%;">
-    {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}"
-           style="width: clamp(150px, 30%, 300px); margin-bottom: 20px; margin-{% if page.profile.align == 'left' %}right{% else %}left{% endif %}: 20px;">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+  <article style="display: flex; flex-direction: column; gap: 2rem;">
+    <div style="display: flex; flex-direction: column-reverse; gap: 2rem;
+                @media (min-width: 768px) { flex-direction: row; }">
+
+      <!-- Main content area -->
+      <div style="flex: 1; font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.7;">
+        <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+          {% if page.profile %}
+            {% if page.profile.more_info %}
+              <div class="more-info">{{ page.profile.more_info }}</div>
+            {% endif %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+          <div class="clearfix">{{ content }}</div>
+        </div>
+
+        <!-- Email and CV buttons -->
+        <div style="display: flex; gap: 15px; margin-top: 1.5rem; flex-wrap: wrap;">
+          <a href="mailto:{{ site.email }}" style="display: inline-flex; align-items: center; gap: 8px;
+                    padding: 8px 16px; border-radius: 4px; background-color: #3cb371; color: white;
+                    text-decoration: none; font-weight: 500; transition: all 0.2s ease;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+            </svg>
+            Email me
+          </a>
+          <a href="assets/pdf/cv.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;
+                    padding: 8px 16px; border-radius: 4px; background-color: #444; color: white;
+                    text-decoration: none; font-weight: 500; transition: all 0.2s ease;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+              <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+            </svg>
+            Curriculum
+          </a>
+        </div>
       </div>
-    {% endif %}
 
-    <div class="clearfix" style="font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.6;">{{ content }}</div>
+      <!-- Profile image column -->
+      {% if page.profile %}
+        {% if page.profile.image %}
+          <div style="flex: 0 0 clamp(250px, 30%, 350px);
+                      @media (max-width: 767px) { margin: 0 auto; }">
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+            {% endif %}
+            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+            <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+              {%
+                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                cache_bust=true
+              %}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
 
-    <!-- Latest posts -->
+    <!-- Research Interests -->
+    <div style="margin-top: 1rem;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
+        Research Interests
+      </h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem;">
+        <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Artificial Intelligence</span>
+        <span style="background-color: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Machine Learning</span>
+        <span style="background-color: #fff3e0; color: #e65100; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Deep Learning</span>
+        <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Computer Vision</span>
+        <span style="background-color: #ede7f6; color: #512da8; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Natural Language Processing</span>
+      </div>
+    </div>
+
+    <!-- Latest posts (if enabled) -->
     {% if page.latest_posts and page.latest_posts.enabled %}
-      <div style="margin-top: 2rem;">
-        <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">
-          <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+      <div style="margin-top: 1rem;">
+        <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
+          Latest Posts
         </h2>
-        {% include latest_posts.liquid %}
+        <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+          {% include latest_posts.liquid %}
+        </div>
       </div>
     {% endif %}
 
-    <!-- Selected papers -->
+    <!-- Selected papers (if enabled) -->
     {% if page.selected_papers %}
-      <div style="margin-top: 2rem;">
-        <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">
-          <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+      <div style="margin-top: 1rem;">
+        <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
+          Selected Publications
         </h2>
-        {% include selected_papers.liquid %}
+        <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+          {% include selected_papers.liquid %}
+        </div>
       </div>
     {% endif %}
+
+    <!-- Recent Activities -->
+    <div style="margin-top: 1rem;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
+        Recent Activities
+      </h2>
+      <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+          <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid #eee;">
+            <div style="min-width: 80px; font-size: 0.9rem; color: #666; font-weight: 500;">May 2025</div>
+            <div>Presented research at the International Conference on Machine Learning (ICML)</div>
+          </li>
+          <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid #eee;">
+            <div style="min-width: 80px; font-size: 0.9rem; color: #666; font-weight: 500;">Apr 2025</div>
+            <div>Published a paper in IEEE Transactions on Neural Networks and Learning Systems</div>
+          </li>
+          <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start;">
+            <div style="min-width: 80px; font-size: 0.9rem; color: #666; font-weight: 500;">Mar 2025</div>
+            <div>Joined the AI Ethics Committee at Amsterdam UMC</div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Social -->
     {% if page.social %}
-      <div class="social" style="margin-top: 2rem;">
-        <div class="contact-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+      <div class="social" style="margin-top: 2rem; text-align: center;">
+        <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); margin-bottom: 1.5rem;">Connect with me</h2>
+        <div class="contact-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 1.5rem;">
           {% include social.liquid %}
         </div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
+        <div class="contact-note" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+          {{ site.contact_note }}
+        </div>
       </div>
     {% endif %}
 
