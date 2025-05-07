@@ -56,8 +56,8 @@ layout: default
       <!-- Profile image column -->
       {% if page.profile %}
         {% if page.profile.image %}
-          <div style="flex: 0 0 clamp(250px, 30%, 350px);
-                      @media (max-width: 767px) { margin: 0 auto; }">
+          <div style="flex: 0 0 clamp(180px, 25%, 280px);
+                      @media (max-width: 767px) { margin: 0 auto; width: 70%; max-width: 250px; }">
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% if page.profile.image_circular %}
               {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
@@ -108,7 +108,7 @@ layout: default
     {% if page.social %}
       <div class="social" style="margin-top: 2rem; text-align: center;">
         <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); margin-bottom: 1.5rem;">Connect with me</h2>
-        <div class="contact-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; font-size: 1.5rem;">
+        <div class="contact-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; font-size: 2rem;">
           {% include social.liquid %}
         </div>
         <div class="contact-note" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
