@@ -56,8 +56,7 @@ layout: default
       <!-- Profile image column -->
       {% if page.profile %}
         {% if page.profile.image %}
-          <div style="flex: 0 0 clamp(180px, 25%, 280px);
-                      @media (max-width: 767px) { margin: 0 auto; width: 70%; max-width: 250px; }">
+           <div style="flex: 0 0 clamp(140px, 18%, 220px);">
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% if page.profile.image_circular %}
               {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
