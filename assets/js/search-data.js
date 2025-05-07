@@ -30,13 +30,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "news-i-defended-my-phd-thesis-with-the-title-towards-an-integration-of-learning-and-reasoning-in-agent-and-multi-agent-systems-sparkles",
-          title: 'I defended my PhD thesis, with the title Towards an Integration of Learning...',
-          description: "",
-          section: "News",},{id: "news-i-started-my-postdoc-at-amsterdam-umc",
-          title: 'I started my Postdoc at @Amsterdam UMC 😊',
-          description: "",
-          section: "News",},{
+        },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
