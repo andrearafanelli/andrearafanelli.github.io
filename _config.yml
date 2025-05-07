@@ -121,7 +121,15 @@ newsletter:
 # Collections
 # -----------------------------------------------------------------------------
 
-
+collections:
+  books:
+    output: false
+  news:
+    defaults:
+      layout: post
+    output: false
+  projects:
+    output: false
 
 
 # -----------------------------------------------------------------------------
