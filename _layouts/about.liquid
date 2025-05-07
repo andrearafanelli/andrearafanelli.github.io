@@ -33,7 +33,7 @@ layout: default
 
         <!-- Email and CV buttons -->
         <div style="display: flex; gap: 15px; margin-top: 1.5rem; flex-wrap: wrap;">
-          <a href="mailto:{{ site.email }}" style="display: inline-flex; align-items: center; gap: 8px;
+          <a href="mailto:{{a.rafanelli@amsterdamumc.nl}}" style="display: inline-flex; align-items: center; gap: 8px;
                     padding: 8px 16px; border-radius: 4px; background-color: #3cb371; color: white;
                     text-decoration: none; font-weight: 500; transition: all 0.2s ease;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -41,7 +41,7 @@ layout: default
             </svg>
             Email me
           </a>
-          <a href="assets/pdf/cv.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;
+          <a href="assets/pdf/Curriculum.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;
                     padding: 8px 16px; border-radius: 4px; background-color: #444; color: white;
                     text-decoration: none; font-weight: 500; transition: all 0.2s ease;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -82,11 +82,12 @@ layout: default
         Research Interests
       </h2>
       <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem;">
-        <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Artificial Intelligence</span>
+
         <span style="background-color: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Machine Learning</span>
         <span style="background-color: #fff3e0; color: #e65100; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Deep Learning</span>
         <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Computer Vision</span>
-        <span style="background-color: #ede7f6; color: #512da8; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Natural Language Processing</span>
+        <span style="background-color: #ede7f6; color: #512da8; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Neuro-Symbolic AI</span>
+        <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">AI4Good</span>
       </div>
     </div>
 
@@ -102,40 +103,6 @@ layout: default
       </div>
     {% endif %}
 
-    <!-- Selected papers (if enabled) -->
-    {% if page.selected_papers %}
-      <div style="margin-top: 1rem;">
-        <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
-          Selected Publications
-        </h2>
-        <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
-          {% include selected_papers.liquid %}
-        </div>
-      </div>
-    {% endif %}
-
-    <!-- Recent Activities -->
-    <div style="margin-top: 1rem;">
-      <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
-        Recent Activities
-      </h2>
-      <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
-        <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
-          <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid #eee;">
-            <div style="min-width: 80px; font-size: 0.9rem; color: #666; font-weight: 500;">May 2025</div>
-            <div>Presented research at the International Conference on Machine Learning (ICML)</div>
-          </li>
-          <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid #eee;">
-            <div style="min-width: 80px; font-size: 0.9rem; color: #666; font-weight: 500;">Apr 2025</div>
-            <div>Published a paper in IEEE Transactions on Neural Networks and Learning Systems</div>
-          </li>
-          <li style="padding: 10px 0; display: flex; gap: 10px; align-items: flex-start;">
-            <div style="min-width: 80px; font-size: 0.9rem; color: #666; font-weight: 500;">Mar 2025</div>
-            <div>Joined the AI Ethics Committee at Amsterdam UMC</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
     <!-- Social -->
     {% if page.social %}

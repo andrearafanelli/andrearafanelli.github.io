@@ -26,12 +26,3 @@ From November 2023 to May 2024, she was visiting student at the **[Learning and 
 <br/>
 
 <div style="margin-top: 3rem;"></div> 
-
-<div class="contact-links" style="margin-top: 1rem; font-size: 1rem;">
-  <p>
-  <strong>   📧 <a href="mailto:a.rafanelli@amsterdamumc.nl" target="_blank">Email me</a> </strong>
-  </p>
-  <p>
-  <strong>  📄 <a href="/assets/pdf/Curriculum.pdf" target="_blank">Curriculum</a> </strong>
-  </p>
-</div>
