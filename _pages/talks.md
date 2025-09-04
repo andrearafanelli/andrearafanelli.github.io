@@ -10,9 +10,7 @@ talks:
     description: PhD defense, Pisa, Italy
     links:
       - label: Access the presentation here
-        url: https://drive.google.com/file/d/1GPwRDxsPA6DiQHfo_bgCcIT69CZrb3AT/view?usp=sharing
-      - label: Access the thesis here
-        url: https://drive.google.com/file/d/14VoirlCJRl4ogDkpqfLutZbm572LoT3i/view?usp=sharing
+        url: https://drive.google.com/file/d/1W6HWyliRXrPjBQCXcvLLVpxRxhHzivK3/view?usp=sharing
   - title: Towards an Integration of Learning and Reasoning in Agent and Multi-agent Systems 
     date: Febraury 19, 2025
     description: PhD defense, Pisa, Italy
