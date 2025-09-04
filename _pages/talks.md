@@ -6,8 +6,8 @@ nav: true
 nav_order: 3
 talks:
   - title: Towards an Integration of Learning and Reasoning in Agent and Multi-agent Systems 
-    date: Febraury 19, 2025
-    description: PhD defense, Pisa, Italy
+    date: September 4, 2025
+    description: 22nd European Conference on Multi-Agent Systems, EUMAS 2025, Bucharest, Romania
     links:
       - label: Access the presentation here
         url: https://drive.google.com/file/d/1W6HWyliRXrPjBQCXcvLLVpxRxhHzivK3/view?usp=sharing
