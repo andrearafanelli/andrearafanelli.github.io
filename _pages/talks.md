@@ -11,8 +11,6 @@ talks:
     links:
       - label: Access the presentation here
         url: https://drive.google.com/file/d/1W6HWyliRXrPjBQCXcvLLVpxRxhHzivK3/view?usp=sharing
-      - label: Access the paper here
-        url: 
   - title: Towards an Integration of Learning and Reasoning in Agent and Multi-agent Systems 
     date: Febraury 19, 2025
     description: PhD defense, Pisa, Italy
