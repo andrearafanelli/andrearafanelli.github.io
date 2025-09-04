@@ -5,7 +5,7 @@ permalink: /talks/
 nav: true
 nav_order: 3
 talks:
-  - title: Towards an Integration of Learning and Reasoning in Agent and Multi-agent Systems 
+  - title: Stop replacing salt with sugar!: Towards Intuitive Human-Agent Teaching
     date: September 4, 2025
     description: 22nd European Conference on Multi-Agent Systems, EUMAS 2025, Bucharest, Romania
     links:
