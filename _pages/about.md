@@ -7,7 +7,7 @@ subtitle: A journey of a thousand miles begins with a single step.
 profile:
   align: left
   image: Andrea.jpg
-  image_circular: false 
+  image_circular: true 
 
 social: true # includes social icons at the bottom of the page
 
