@@ -5,10 +5,19 @@
 
 @use "sass:color";
 
-// Colors
-$red-color: #ff3636 !default;
+// Colors - Magenta Theme
+$primary-magenta: #C7357E !default;
+$primary-magenta-dark: #9B2861 !default;
+$primary-magenta-light: #E05694 !default;
+$primary-magenta-pale: #F2D6E3 !default;
+$accent-purple: #8B3A8B !default;
+$accent-rose: #D4567B !default;
+$accent-coral: #E8755E !default;
+$accent-gold: #D4A373 !default;
+
+$red-color: $accent-coral !default;
 $red-color-dark: #b71c1c !default;
-$orange-color: #f29105 !default;
+$orange-color: $accent-gold !default;
 $blue-color: #0076df !default;
 $blue-color-dark: #00369f !default;
 $cyan-color: #2698ba !default;
@@ -18,10 +27,10 @@ $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
-$purple-color: #b509ac !default;
+$purple-color: $accent-purple !default;
 $light-purple-color: color.adjust($purple-color, $lightness: 25%);
-$pink-color: #f92080 !default;
-$pink-color-light: #ffdddd !default;
+$pink-color: $primary-magenta !default;
+$pink-color-light: $primary-magenta-pale !default;
 $yellow-color: #efcc00 !default;
 $blue-light: #13c1a1 !default;
 
