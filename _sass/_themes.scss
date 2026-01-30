@@ -1,4 +1,8 @@
 
+// ============================================================================
+// MAGENTA COLOR PALETTE
+// ============================================================================
+
 :root {
   // Primary Magenta Scale
   --primary-magenta: #C7357E;
@@ -139,19 +143,41 @@ a {
 // ============================================================================
 
 .about-hero {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 4rem 3rem;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
   
   .hero-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
     
     @media (max-width: 968px) {
       grid-template-columns: 1fr;
       gap: 2rem;
+    }
+  }
+  
+  .profile-card {
+    @media (min-width: 969px) {
+      order: 2;
+    }
+    @media (max-width: 968px) {
+      order: 1;
+    }
+  }
+  
+  .hero-content {
+    @media (min-width: 969px) {
+      order: 1;
+    }
+    @media (max-width: 968px) {
+      order: 2;
     }
   }
   
@@ -198,14 +224,17 @@ a {
     text-align: center;
     
     .profile-image-wrapper {
-      width: 200px;
-      height: 200px;
+      width: 220px;
+      height: 220px;
       margin: 0 auto 1.5rem;
       border-radius: 50%;
       border: 4px solid var(--primary-magenta-pale);
       overflow: hidden;
       transition: all 0.4s ease;
-      background: white;
+      background: linear-gradient(135deg, #FAF7F9 0%, #F2D6E3 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       
       &:hover {
         border-color: var(--primary-magenta);
@@ -216,7 +245,8 @@ a {
       img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center;
       }
     }
     
@@ -285,9 +315,13 @@ a {
 // ============================================================================
 
 .interests-section {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 4rem auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
   
   .section-title {
     font-family: 'Literata', Georgia, serif;
@@ -356,12 +390,17 @@ a {
 // ============================================================================
 
 .publications-section {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 4rem auto;
-  padding: 3rem 2rem;
+  padding: 3rem 3rem;
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1.5rem;
+  }
   
   .pub-item {
     border-left: 3px solid var(--primary-magenta-pale);
