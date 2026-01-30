@@ -1,148 +1,171 @@
 ---
 layout: default
 ---
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<div class="post" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+  <header class="post-header" style="text-align: center; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 2px solid #f0f0f0;">
+    <h1 class="post-title" style="font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 0.5rem;">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold" style="color: #000;">{{ site.first_name }}</span>
+        <span style="color: #444;">{{ site.middle_name }} {{ site.last_name }}</span>
+      {% else %}
+        <span style="color: #000;">{{ site.title }}</span>
+      {% endif %}
+    </h1>
+    <p class="desc" style="font-size: clamp(1.1rem, 2vw, 1.3rem); margin-top: 0.5rem; font-style: italic; color: #555;">
+      {{ page.subtitle }}
+    </p>
+  </header>
 
-<style>
-  /* Override container for about page to use full width */
-  .container {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-</style>
+  <article style="display: flex; flex-direction: column; gap: 2rem;">
+    <div style="display: flex; flex-direction: column-reverse; gap: 2rem;
+                @media (min-width: 768px) { flex-direction: row; }">
 
-<!-- Hero Section -->
-<section class="about-hero">
-  <div class="hero-grid">
-    {% if page.profile %}
-      <div class="profile-card">
+      <!-- Main content area -->
+      <div style="flex: 1; font-size: clamp(1rem, 1.5vw, 1.1rem); line-height: 1.7;">
+        <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+          {% if page.profile %}
+            {% if page.profile.more_info %}
+              <div class="more-info">{{ page.profile.more_info }}</div>
+            {% endif %}
+          {% endif %}
+          <div class="clearfix">{{ content }}</div>
+        </div>
+
+        <!-- Email and CV buttons - CENTERED -->
+        <div style="display: flex; gap: 15px; margin-top: 1.5rem; flex-wrap: wrap; justify-content: center;">
+          <a href="mailto:{a.rafanelli@amsterdamumc.nl}" style="display: inline-flex; align-items: center; gap: 8px;
+                    padding: 8px 16px; border-radius: 4px; background-color: #3cb371; color: white;
+                    text-decoration: none; font-weight: 500; transition: all 0.2s ease;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+            </svg>
+            Email me
+          </a>
+          <a href="assets/pdf/Curriculum.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;
+                    padding: 8px 16px; border-radius: 4px; background-color: #444; color: white;
+                    text-decoration: none; font-weight: 500; transition: all 0.2s ease;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+              <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+            </svg>
+            Curriculum
+          </a>
+        </div>
+      </div>
+
+      <!-- Profile image column - LARGER SIZE -->
+      {% if page.profile %}
         {% if page.profile.image %}
-          <div class="profile-image-wrapper">
+           <div style="flex: 0 0 auto; width: 90%; max-width: 360px; margin: 0 auto;">
             {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
             {% if page.profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid rounded-circle' %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
             {% else %}
-              {% assign profile_image_class = 'img-fluid rounded' %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
             {% endif %}
-            {%
-              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=page.profile.image cache_bust=true
-            %}
+            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+            <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+              {%
+                include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+                cache_bust=true
+              %}
+            </div>
           </div>
         {% endif %}
-        <h3>{{ site.first_name }} {{ site.last_name }}, PhD</h3>
-        <p>Postdoc Researcher<br>Digital Biomarkers & AI</p>
-        
-        {% if page.social %}
-          <div class="social" style="margin-top: 1rem;">
-            {% include social.liquid %}
+      {% endif %}
+    </div>
+
+    <!-- Research Interests - CENTERED -->
+    <div style="margin-top: 1rem; text-align: center;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
+        Research Interests
+      </h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; justify-content: center;">
+        <span style="background-color: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Machine Learning</span>
+        <span style="background-color: #fff3e0; color: #e65100; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Deep Learning</span>
+        <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Computer Vision</span>
+        <span style="background-color: #ede7f6; color: #512da8; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Neuro-Symbolic AI</span>
+        <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">AI4Good</span>
+      </div>
+    </div>
+
+    <!-- Scientific Service Section -->
+    <div class="scientific-service-section">
+      <h2 class="section-title">Scientific Service</h2>
+      
+      <div class="service-cards-container">
+        <!-- Reviewer Card -->
+        <div class="service-card reviewer-card">
+          <div class="service-card-header">
+            <i class="fas fa-user-check service-icon"></i>
+            <h3 class="service-card-title">Reviewer</h3>
           </div>
-        {% endif %}
+          <div class="service-card-body">
+            <div class="service-category">
+              <span class="category-label">Conferences</span>
+              <div class="badges-container">
+                <span class="service-badge">AAMAS</span>
+                <span class="service-badge">EXTRAAMAS</span>
+                <span class="service-badge">WOA</span>
+              </div>
+            </div>
+            <div class="service-category">
+              <span class="category-label">Journals</span>
+              <div class="badges-container">
+                <span class="service-badge">Applied Intelligence</span>
+                <span class="service-badge">Expert Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Program Committee Card -->
+        <div class="service-card committee-card">
+          <div class="service-card-header">
+            <i class="fas fa-users service-icon"></i>
+            <h3 class="service-card-title">Program Committee</h3>
+          </div>
+          <div class="service-card-body">
+            <div class="service-category">
+              <span class="category-label">Conferences</span>
+              <div class="badges-container">
+                <span class="service-badge">AAMAS</span>
+                <span class="service-badge">EXTRAAMAS</span>
+                <span class="service-badge">WOA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest posts (if enabled) -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <div style="margin-top: 1rem;">
+        <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">
+          Latest Posts
+        </h2>
+        <div style="background-color: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+          {% include latest_posts.liquid %}
+        </div>
       </div>
     {% endif %}
-    
-    <div class="hero-content">
-      <h1>
-        {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </h1>
-      <p class="tagline">{{ page.subtitle }}</p>
-      <div class="hero-bio">
-        {{ content }}
+
+    <!-- Social -->
+    {% if page.social %}
+      <div class="social" style="margin-top: 2rem; text-align: center;">
+        <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); margin-bottom: 1.5rem;">Connect with me</h2>
+        <div class="contact-icons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; font-size: 2rem;">
+          {% include social.liquid %}
+        </div>
+        <div class="contact-note" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+          {{ site.contact_note }}
+        </div>
       </div>
-      <div class="cta-buttons">
-        <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">View Publications</a>
-        <a href="{{ '/assets/pdf/Curriculum.pdf' | relative_url }}" target="_blank" class="btn btn-secondary">Download CV</a>
-      </div>
-    </div>
-  </div>
-</section>
+    {% endif %}
 
-<!-- Research Interests Section -->
-<section class="interests-section">
-  <h2 class="section-title">Research Interests</h2>
-  <div class="interests-grid">
-    <div class="interest-item">
-      <h3>Machine Learning</h3>
-      <p>Developing predictive models for healthcare applications and clinical decision support systems.</p>
-    </div>
-    <div class="interest-item">
-      <h3>Deep Learning</h3>
-      <p>Neural networks for medical image analysis and disease detection from complex data.</p>
-    </div>
-    <div class="interest-item">
-      <h3>Computer Vision</h3>
-      <p>Image processing and analysis for diagnostic applications in healthcare settings.</p>
-    </div>
-    <div class="interest-item">
-      <h3>Neuro-Symbolic AI</h3>
-      <p>Combining symbolic reasoning with neural approaches for interpretable AI systems.</p>
-    </div>
-    <div class="interest-item">
-      <h3>AI4Good</h3>
-      <p>Leveraging artificial intelligence to solve real-world problems and improve lives.</p>
-    </div>
-    <div class="interest-item">
-      <h3>Digital Biomarkers</h3>
-      <p>Using computational methods to identify and validate digital health indicators.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Selected Papers Section -->
-{% if page.selected_papers %}
-{% assign selected_papers = site.bibliography | where: "selected", "true" %}
-{% if selected_papers.size > 0 %}
-<section class="publications-section">
-  <h2 class="section-title">Selected Publications</h2>
-  {% include selected_papers.liquid %}
-</section>
-{% endif %}
-{% endif %}
-
-<!-- Latest Posts -->
-{% if page.latest_posts and page.latest_posts.enabled %}
-<section class="interests-section">
-  <h2 class="section-title">Latest Posts</h2>
-  <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);">
-    {% include latest_posts.liquid %}
-  </div>
-</section>
-{% endif %}
-
-<!-- Selected Projects -->
-{% if page.selected_projects %}
-{% assign selected_projects = site.projects | where: "selected", "true" %}
-{% if selected_projects.size > 0 %}
-<section class="interests-section">
-  <h2 class="section-title">Selected Projects</h2>
-  <div class="interests-grid">
-    {% for project in selected_projects limit: 4 %}
-      <div class="interest-item">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        {% if project.tags %}
-          <div style="margin-top: 0.5rem;">
-            {% for tag in project.tags %}
-              <span class="badge">{{ tag }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-{% endif %}
-
-<!-- News -->
-{% if page.announcements and page.announcements.enabled %}
-<section class="interests-section">
-  <h2 class="section-title">News & Announcements</h2>
-  <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);">
-    {% include news.liquid limit=page.announcements.limit %}
-  </div>
-</section>
-{% endif %}
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% include newsletter.liquid center=true %}
+    {% endif %}
+  </article>
+</div>
