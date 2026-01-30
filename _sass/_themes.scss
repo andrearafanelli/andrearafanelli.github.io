@@ -1056,15 +1056,13 @@ a {
   }
   
   .pub-item {
-    border-left: 3px solid var(--primary-magenta-pale);
-    padding-left: 1.5rem;
+    padding-left: 0;
     margin-bottom: 2rem;
     transition: all 0.3s ease;
     
     &:hover {
-      border-left-color: var(--primary-magenta);
       background: var(--neutral-pale);
-      padding-left: 2rem;
+      padding-left: 0.5rem;
     }
     
     .pub-title {
