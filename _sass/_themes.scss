@@ -553,3 +553,79 @@ hr {
     }
   }
 }
+
+// ============================================================================
+// TALKS / PRESENTATIONS
+// ============================================================================
+
+.talks-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  
+  .talk-item {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-magenta);
+    box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: 0 8px 25px rgba(199, 53, 126, 0.15);
+      transform: translateX(5px);
+    }
+    
+    .talk-title {
+      color: var(--neutral-dark);
+      font-family: 'Literata', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .talk-date {
+      color: var(--primary-magenta);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .talk-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .talk-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      
+      .talk-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        background: var(--primary-magenta);
+        color: white !important;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(199, 53, 126, 0.2);
+        
+        &:hover {
+          background: var(--primary-magenta-dark);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(199, 53, 126, 0.3);
+          color: white !important;
+        }
+        
+        &:visited {
+          color: white !important;
+        }
+      }
+    }
+  }
+}
