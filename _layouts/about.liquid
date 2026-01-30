@@ -6,6 +6,32 @@ layout: default
 <!-- Hero Section -->
 <section class="about-hero">
   <div class="hero-grid">
+    {% if page.profile %}
+      <div class="profile-card">
+        {% if page.profile.image %}
+          <div class="profile-image-wrapper">
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid rounded' %}
+            {% endif %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=page.profile.image cache_bust=true
+            %}
+          </div>
+        {% endif %}
+        <h3>{{ site.first_name }} {{ site.last_name }}, PhD</h3>
+        <p>Postdoc Researcher<br>Digital Biomarkers & AI</p>
+        
+        {% if page.social %}
+          <div class="social" style="margin-top: 1rem;">
+            {% include social.liquid %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    
     <div class="hero-content">
       <h1>
         {% if site.title == 'blank' %}
@@ -23,32 +49,6 @@ layout: default
         <a href="{{ '/assets/pdf/Curriculum.pdf' | relative_url }}" target="_blank" class="btn btn-secondary">Download CV</a>
       </div>
     </div>
-    
-    {% if page.profile %}
-      <div class="profile-card">
-        {% if page.profile.image %}
-          <div class="profile-image-wrapper">
-            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-            {% if page.profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid rounded' %}
-            {% endif %}
-            {%
-              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=page.profile.image cache_bust=true
-            %}
-          </div>
-        {% endif %}
-        <h3>{{ site.first_name }} {{ site.last_name }}, PhD</h3>
-        <p>Postdoc Researcher</p>
-        
-        {% if page.social %}
-          <div class="social" style="margin-top: 1rem;">
-            {% include social.liquid %}
-          </div>
-        {% endif %}
-      </div>
-    {% endif %}
   </div>
 </section>
 
@@ -58,15 +58,27 @@ layout: default
   <div class="interests-grid">
     <div class="interest-item">
       <h3>Machine Learning</h3>
+      <p>Developing predictive models for healthcare applications and clinical decision support systems.</p>
     </div>
     <div class="interest-item">
       <h3>Deep Learning</h3>
+      <p>Neural networks for medical image analysis and disease detection from complex data.</p>
+    </div>
+    <div class="interest-item">
+      <h3>Computer Vision</h3>
+      <p>Image processing and analysis for diagnostic applications in healthcare settings.</p>
     </div>
     <div class="interest-item">
       <h3>Neuro-Symbolic AI</h3>
+      <p>Combining symbolic reasoning with neural approaches for interpretable AI systems.</p>
     </div>
     <div class="interest-item">
       <h3>AI4Good</h3>
+      <p>Leveraging artificial intelligence to solve real-world problems and improve lives.</p>
+    </div>
+    <div class="interest-item">
+      <h3>Digital Biomarkers</h3>
+      <p>Using computational methods to identify and validate digital health indicators.</p>
     </div>
   </div>
 </section>
