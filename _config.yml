@@ -259,7 +259,7 @@ scholar:
 
   query: "@*"
   group_by: abbr
-  group_order: ascending
+  group_order: descending
 
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
