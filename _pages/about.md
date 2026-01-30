@@ -19,7 +19,7 @@ announcements:
 selected_papers: true # includes a list of papers marked as "selected={true}"
 ---
 
-I am a postdoc researcher at **[Amsterdam UMC](https://www.amc.nl/web/home.htm)** in the **[Translational AI Laboratory](https://trailab.nl/)** and in the **[Amsterdam Center for Computational Cardiology](https://computational-cardiology.nl/)**.
+I am a postdoctoral researcher at **[Amsterdam UMC](https://www.amc.nl/web/home.htm)** in the **[Translational AI Laboratory](https://trailab.nl/)** and in the **[Amsterdam Center for Computational Cardiology](https://computational-cardiology.nl/)**.
 
 My work centres on the development of _Digital Biomarkers_. Particularly, I focus on applying AI and machine-learning techniques to biomedical data, especially in cardiology and translational medicine.
 
