@@ -307,11 +307,11 @@ a {
     }
     
     &.btn-secondary {
-      background: transparent;
-      color: var(--primary-magenta);
+      background: var(--primary-magenta);
+      color: white;
       
       &:hover {
-        background: var(--primary-magenta);
+        background: var(--primary-magenta-dark);
         color: white !important;
       }
     }
