@@ -37,6 +37,17 @@ layout: default
             {% include social.liquid %}
           </div>
         {% endif %}
+        
+        <!-- Research Interests Tags -->
+        <div class="research-interests-tags">
+          <p class="interests-label">Research Interests</p>
+          <div class="interests-tags-container">
+            <span class="interest-tag tag-1">Machine Learning</span>
+            <span class="interest-tag tag-2">Deep Learning</span>
+            <span class="interest-tag tag-3">Neuro-Symbolic AI</span>
+            <span class="interest-tag tag-4">AI4Good</span>
+          </div>
+        </div>
       </div>
     {% endif %}
     
@@ -56,30 +67,6 @@ layout: default
         <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">View Publications</a>
         <a href="{{ '/assets/pdf/Curriculum.pdf' | relative_url }}" target="_blank" class="btn btn-secondary">Download CV</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Research Interests Section -->
-<section class="interests-section">
-  <h2 class="section-title">Research Interests</h2>
-  <div class="interests-grid">
-    <div class="interest-item">
-      <h3>Machine Learning</h3>
-    </div>
-    <div class="interest-item">
-      <h3>Deep Learning</h3>
-     
-    </div>
-
-     
-    <div class="interest-item">
-      <h3>Neuro-Symbolic AI</h3>
-  
-    </div>
-    <div class="interest-item">
-      <h3>AI4Good</h3>
-    
     </div>
   </div>
 </section>
