@@ -851,6 +851,319 @@ a {
   }
 }
 
+// Publications Page Styling
+.publications {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  
+  @media (max-width: 768px) {
+    padding: 1rem 1.5rem;
+  }
+  
+  h1 {
+    font-family: 'Literata', Georgia, serif;
+    color: var(--neutral-dark) !important;
+    font-size: 2.5rem !important;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--primary-magenta),
+        var(--accent-purple)
+      );
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+  }
+  
+  h2.bibliography {
+    font-family: 'Literata', Georgia, serif;
+    color: var(--primary-magenta) !important;
+    border-top: 2px solid var(--primary-magenta-pale) !important;
+    padding-top: 1.5rem !important;
+    margin-top: 3rem !important;
+    font-size: 1.8rem;
+    text-align: left !important;
+    font-weight: 600;
+    
+    span {
+      font-size: inherit !important;
+    }
+  }
+  
+  ol.bibliography {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--primary-magenta);
+      box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+      
+      // Stagger animation
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.05}s;
+        }
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(199, 53, 126, 0.02) 0%,
+          rgba(139, 58, 139, 0.02) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      
+      &:hover {
+        transform: translateX(8px);
+        box-shadow: 0 8px 25px rgba(199, 53, 126, 0.15);
+        border-left-width: 6px;
+        
+        &::before {
+          opacity: 1;
+        }
+      }
+      
+      .abbr {
+        margin-bottom: 0.8rem;
+        
+        abbr {
+          display: inline-block;
+          background: var(--primary-magenta) !important;
+          color: white !important;
+          padding: 0.3rem 0.8rem;
+          border-radius: 6px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          margin-right: 0.5rem;
+          margin-bottom: 0.5rem;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 8px rgba(199, 53, 126, 0.2);
+          
+          &:hover {
+            background: var(--primary-magenta-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(199, 53, 126, 0.3);
+          }
+          
+          a {
+            color: white !important;
+          }
+        }
+        
+        .award {
+          background: var(--accent-gold) !important;
+          color: var(--neutral-dark) !important;
+          border: none !important;
+        }
+      }
+      
+      .title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--neutral-dark);
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .author {
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        position: relative;
+        z-index: 1;
+        
+        a {
+          color: var(--primary-magenta);
+          border-bottom: 1px dashed var(--primary-magenta);
+          transition: all 0.3s ease;
+          
+          &:hover {
+            color: var(--primary-magenta-dark);
+            border-bottom-style: solid;
+            text-decoration: none;
+          }
+        }
+        
+        > em {
+          color: var(--primary-magenta-dark);
+          font-weight: 600;
+          border-bottom: 2px solid var(--primary-magenta-pale);
+          font-style: normal;
+        }
+        
+        > span.more-authors {
+          color: var(--text-secondary);
+          border-bottom: 1px dashed var(--text-secondary);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            color: var(--primary-magenta);
+            border-bottom-color: var(--primary-magenta);
+          }
+        }
+      }
+      
+      .periodical {
+        font-style: italic;
+        color: var(--text-secondary);
+        margin-bottom: 0.8rem;
+        position: relative;
+        z-index: 1;
+        
+        em {
+          color: var(--primary-magenta);
+          font-weight: 500;
+        }
+      }
+      
+      .links {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        position: relative;
+        z-index: 1;
+        
+        a.btn {
+          color: var(--primary-magenta) !important;
+          border: 2px solid var(--primary-magenta) !important;
+          background: transparent;
+          padding: 0.4rem 1rem !important;
+          border-radius: 6px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          
+          &:hover {
+            background: var(--primary-magenta) !important;
+            color: white !important;
+            border-color: var(--primary-magenta) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(199, 53, 126, 0.2);
+          }
+        }
+      }
+      
+      .badges {
+        margin-top: 0.8rem;
+        position: relative;
+        z-index: 1;
+        
+        span {
+          display: inline-block;
+          background: var(--primary-magenta-pale);
+          color: var(--primary-magenta-dark);
+          padding: 0.25rem 0.7rem;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin-right: 0.5rem;
+          margin-bottom: 0.5rem;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: var(--primary-magenta);
+            color: white;
+            transform: translateY(-2px);
+          }
+        }
+      }
+      
+      .hidden {
+        background: var(--neutral-pale);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        border-left: 3px solid var(--primary-magenta-pale);
+        position: relative;
+        z-index: 1;
+        
+        &.open {
+          animation: fadeIn 0.3s ease;
+        }
+        
+        pre {
+          background: white;
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          padding: 1rem;
+          overflow-x: auto;
+          
+          code {
+            background: transparent;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+  
+  // Bib Search Styling
+  #bibsearch {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--primary-magenta-pale);
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-magenta);
+      box-shadow: 0 4px 15px rgba(199, 53, 126, 0.15);
+    }
+    
+    &::placeholder {
+      color: var(--text-muted);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 // ============================================================================
 // BADGES
 // ============================================================================
