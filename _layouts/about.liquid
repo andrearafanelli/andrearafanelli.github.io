@@ -83,56 +83,55 @@ layout: default
       <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; justify-content: center;">
         <span style="background-color: #e8f5e9; color: #2e7d32; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Machine Learning</span>
         <span style="background-color: #fff3e0; color: #e65100; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Deep Learning</span>
+        <span style="background-color: #f3e5f5; color: #7b1fa2; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Computer Vision</span>
         <span style="background-color: #ede7f6; color: #512da8; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">Neuro-Symbolic AI</span>
         <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 30px; font-size: 0.9rem;">AI4Good</span>
       </div>
     </div>
 
     <!-- Scientific Service Section -->
-    <div style="margin-top: 2.5rem; text-align: center;">
-      <h2 style="font-size: clamp(1.5rem, 3vw, 1.8rem); border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
-        Scientific Service
-      </h2>
+    <div class="scientific-service-section">
+      <h2 class="section-title">Scientific Service</h2>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+      <div class="service-cards-container">
         <!-- Reviewer Card -->
-        <div style="background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%); border: 2px solid #C7357E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(199, 53, 126, 0.1); transition: all 0.3s ease;">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; justify-content: center;">
-            <i class="fas fa-user-check" style="font-size: 1.5rem; color: #C7357E;"></i>
-            <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; margin: 0;">Reviewer</h3>
+        <div class="service-card reviewer-card">
+          <div class="service-card-header">
+            <i class="fas fa-user-check service-icon"></i>
+            <h3 class="service-card-title">Reviewer</h3>
           </div>
-          <div style="text-align: left;">
-            <div style="margin-bottom: 1rem;">
-              <span style="display: block; font-weight: 600; color: #666; margin-bottom: 0.5rem; font-size: 0.9rem;">Conferences</span>
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <span style="background-color: #fce4ec; color: #C7357E; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">AAMAS</span>
-                <span style="background-color: #fce4ec; color: #C7357E; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">EXTRAAMAS</span>
-                <span style="background-color: #fce4ec; color: #C7357E; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">WOA</span>
+          <div class="service-card-body">
+            <div class="service-category">
+              <span class="category-label">Conferences</span>
+              <div class="badges-container">
+                <span class="service-badge">AAMAS</span>
+                <span class="service-badge">EXTRAAMAS</span>
+                <span class="service-badge">WOA</span>
               </div>
             </div>
-            <div>
-              <span style="display: block; font-weight: 600; color: #666; margin-bottom: 0.5rem; font-size: 0.9rem;">Journals</span>
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <span style="background-color: #fce4ec; color: #C7357E; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Applied Intelligence</span>
-                <span style="background-color: #fce4ec; color: #C7357E; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Expert Systems</span>
+            <div class="service-category">
+              <span class="category-label">Journals</span>
+              <div class="badges-container">
+                <span class="service-badge">Applied Intelligence</span>
+                <span class="service-badge">Expert Systems</span>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Program Committee Card -->
-        <div style="background: linear-gradient(135deg, #fff 0%, #f9f9f9 100%); border: 2px solid #8B3A8B; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(139, 58, 139, 0.1); transition: all 0.3s ease;">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; justify-content: center;">
-            <i class="fas fa-users" style="font-size: 1.5rem; color: #8B3A8B;"></i>
-            <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; margin: 0;">Program Committee</h3>
+        <div class="service-card committee-card">
+          <div class="service-card-header">
+            <i class="fas fa-users service-icon"></i>
+            <h3 class="service-card-title">Program Committee</h3>
           </div>
-          <div style="text-align: left;">
-            <div>
-              <span style="display: block; font-weight: 600; color: #666; margin-bottom: 0.5rem; font-size: 0.9rem;">Conferences</span>
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <span style="background-color: #f3e5f5; color: #8B3A8B; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">AAMAS</span>
-                <span style="background-color: #f3e5f5; color: #8B3A8B; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">EXTRAAMAS</span>
-                <span style="background-color: #f3e5f5; color: #8B3A8B; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">WOA</span>
+          <div class="service-card-body">
+            <div class="service-category">
+              <span class="category-label">Conferences</span>
+              <div class="badges-container">
+                <span class="service-badge">AAMAS</span>
+                <span class="service-badge">EXTRAAMAS</span>
+                <span class="service-badge">WOA</span>
               </div>
             </div>
           </div>
