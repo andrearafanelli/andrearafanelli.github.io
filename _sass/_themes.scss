@@ -646,6 +646,107 @@ a {
       }
     }
   }
+  
+  // Research Interests Tags under profile card
+  .research-interests-tags {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(199, 53, 126, 0.1);
+    
+    .interests-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .interests-tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .interest-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: default;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      
+      // Animated shine effect
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+      
+      &:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        
+        &::before {
+          left: 100%;
+        }
+      }
+      
+      // Different colors for each tag
+      &.tag-1 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        
+        &:hover {
+          box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+      }
+      
+      &.tag-2 {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        
+        &:hover {
+          box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+      }
+      
+      &.tag-3 {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        
+        &:hover {
+          box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+        }
+      }
+      
+      &.tag-4 {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        color: white;
+        
+        &:hover {
+          box-shadow: 0 6px 20px rgba(67, 233, 123, 0.4);
+        }
+      }
+    }
+  }
 }
 
 @keyframes fadeInUp {
