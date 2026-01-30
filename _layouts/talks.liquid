@@ -2,21 +2,19 @@
 layout: page
 ---
 
-{% for talk in page.talks %}
-  <div style="margin-bottom: 2rem;">
-    <p>
-      <p target="_blank" style="font-weight: bold; font-size: 1.1rem;">
-        {{ talk.title }}
-      </p>
-    </p>
-    <p style="color: #666;">{{ talk.date }}</p>
-    <p>{{ talk.description }}</p>
-    <p>
-      {% for item in talk.links %}
-        <a href="{{ item.url }}" target="_blank" style="color: #13c1a1; margin-right: 1rem;">
-          {{ item.label }}
-        </a>
-      {% endfor %}
-    </p>
-  </div>
-{% endfor %}
+<div class="talks-container">
+  {% for talk in page.talks %}
+    <div class="talk-item">
+      <h3 class="talk-title">{{ talk.title }}</h3>
+      <p class="talk-date">{{ talk.date }}</p>
+      <p class="talk-description">{{ talk.description }}</p>
+      <div class="talk-links">
+        {% for item in talk.links %}
+          <a href="{{ item.url }}" target="_blank" class="talk-link">
+            {{ item.label }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
