@@ -143,16 +143,6 @@ a {
 // HERO SECTION (ABOUT PAGE)
 // ============================================================================
 
-// Override container width for about page
-body {
-  &.about-page {
-    .container {
-      max-width: 100% !important;
-      padding: 0 !important;
-    }
-  }
-}
-
 .about-hero {
   max-width: 1600px;
   margin: 0 auto;
@@ -272,6 +262,13 @@ body {
       font-size: 0.95rem;
       line-height: 1.6;
     }
+    
+    .social {
+      a {
+        font-size: 1.5rem;
+        margin: 0 0.4rem;
+      }
+    }
   }
 }
 
@@ -315,7 +312,7 @@ body {
       
       &:hover {
         background: var(--primary-magenta);
-        color: white;
+        color: white !important;
       }
     }
   }
@@ -336,7 +333,7 @@ body {
   
   .section-title {
     font-family: 'Literata', Georgia, serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--neutral-dark);
     margin-bottom: 0.5rem;
     position: relative;
