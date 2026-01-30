@@ -908,7 +908,6 @@ a {
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: 12px;
-      border-left: 4px solid var(--primary-magenta);
       box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
@@ -943,7 +942,6 @@ a {
       &:hover {
         transform: translateX(8px);
         box-shadow: 0 8px 25px rgba(199, 53, 126, 0.15);
-        border-left-width: 6px;
         
         &::before {
           opacity: 1;
