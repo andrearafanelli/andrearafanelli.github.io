@@ -1,12 +1,53 @@
 ---
 ---
 <div class="row">
-
+  {% if site.enable_publication_thumbnails %}
+    <!-- Thumbnail: entry.preview if that file exists, else assets/img/publication_preview/<bibkey>.jpg, else a placeholder -->
+    {% assign thumb_src = nil %}
+    {% assign paper_link = nil %}
+    {% if entry.preview %}
+      {% if entry.preview contains '://' %}
+        {% assign thumb_src = entry.preview %}
+      {% else %}
+        {% capture preview_exists %}{% file_exists assets/img/publication_preview/{{ entry.preview }} %}{% endcapture %}
+        {% if preview_exists == 'true' %}
+          {% assign thumb_src = entry.preview | prepend: '/assets/img/publication_preview/' | relative_url %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+    {% unless thumb_src %}
+      {% capture key_thumb_exists %}{% file_exists assets/img/publication_preview/{{ entry.key }}.jpg %}{% endcapture %}
+      {% if key_thumb_exists == 'true' %}
+        {% assign thumb_src = entry.key | append: '.jpg' | prepend: '/assets/img/publication_preview/' | relative_url %}
+      {% endif %}
+    {% endunless %}
+    {% if entry.doi %}
+      {% if entry.doi contains '://' %}
+        {% assign paper_link = entry.doi %}
+      {% else %}
+        {% assign paper_link = entry.doi | prepend: 'https://doi.org/' %}
+      {% endif %}
+    {% elsif entry.url %}
+      {% assign paper_link = entry.url %}
+    {% endif %}
+    <div class="pub-thumb">
+      {% if thumb_src %}
+        {% if paper_link %}<a href="{{ paper_link }}">{% endif %}
+        <img src="{{ thumb_src }}" alt="First page of the paper" loading="lazy">
+        {% if paper_link %}</a>{% endif %}
+      {% else %}
+        <div class="pub-thumb-placeholder" aria-hidden="true"><i class="fa-regular fa-file-lines"></i></div>
+      {% endif %}
+    </div>
+  {% endif %}
 
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <div class="title">
+      {%- if entry.abbr %}<span class="pub-type">{{ entry.abbr }}</span>{% endif -%}
+      {{ entry.title }}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -149,7 +190,7 @@
         </a>
       {% endif %}
       {% if entry.abstract %}
-        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+        <a class="abstract btn btn-sm z-depth-0" role="button">Abstract</a>
       {% endif %}
       {% if entry.doi %}
         <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
@@ -158,7 +199,7 @@
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
       {% if entry.bibtex_show %}
-        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+        <a class="bibtex btn btn-sm z-depth-0" role="button">BibTeX</a>
       {% endif %}
       {% if entry.html %}
         {% if entry.html contains '://' %}

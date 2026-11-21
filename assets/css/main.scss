@@ -6,9 +6,10 @@
 // Dimensions
 $max-content-width: {{ site.max_width }};
 
+// "themes" (the magenta theme) is switched off for the professional redesign; the file is kept in _sass/.
+// "professional" is imported last so it overrides the base styles.
 @import
   "variables",
-  "themes",
   "layout",
   "base",
   "distill",
@@ -21,5 +22,6 @@ $max-content-width: {{ site.max_width }};
   "font-awesome/regular",
   "tabler-icons/tabler-icons.scss",
   "tabler-icons/tabler-icons-filled.scss",
-  "tabler-icons/tabler-icons-outline.scss"
+  "tabler-icons/tabler-icons-outline.scss",
+  "professional"
 ;

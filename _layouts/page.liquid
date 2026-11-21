@@ -8,29 +8,37 @@ layout: default
   </style>
 {% endif %}
 
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.description }}</p>
-  </header>
+<div class="site-layout">
+  {% include sidebar.liquid %}
 
-  <article>
-    {{ content }}
-  </article>
+  <div class="site-main">
+    <div class="post">
+      <header class="page-header">
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="page-subtitle">{{ page.description }}</p>
+        {% endif %}
+      </header>
 
-  {% if page.related_publications %}
-    <h2>References</h2>
-    <style>
-    .publications .title {
-      color: #13c1a1 ; 
-      }
-    </style>
-    <div class="publications">
-      {% bibliography --cited_in_order %}
+      <article>
+        {{ content }}
+      </article>
+
+      {% if page.related_publications %}
+        <h2>References</h2>
+        <style>
+        .publications .title {
+          color: #13c1a1 ;
+          }
+        </style>
+        <div class="publications">
+          {% bibliography --cited_in_order %}
+        </div>
+      {% endif %}
+
+      {% if site.giscus and page.giscus_comments %}
+        {% include giscus.liquid %}
+      {% endif %}
     </div>
-  {% endif %}
-
-  {% if site.giscus and page.giscus_comments %}
-    {% include giscus.liquid %}
-  {% endif %}
+  </div>
 </div>

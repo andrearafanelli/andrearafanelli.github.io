@@ -22,15 +22,5 @@ nav_order: 2
 <br> <br>
 
 ### Service ✒️
-  - *Program Committee*
-     - **[The International Conference Series on Hybrid Human-Artificial Intelligence (HHAI) 2025](https://hhai-conference.org/2025/program-committee/)**
-    - **[The International Workshop on EXplainable, Trustworthy, and Responsible AI and Multi-Agent Systems (EXTRAAMAS) 2025](https://extraamas.ehealth.hevs.ch/organization.html)**
-    - **[The International Workshop on EXplainable, Trustworthy, and Responsible AI and Multi-Agent Systems (EXTRAAMAS) 2024](https://extraamas.ehealth.hevs.ch/organization.html)**
-    - **[The European Workshop on Fairness and Bias in AI (AEQUITAS) 2023](https://aequitas-aod.github.io/aequitas-ecai23.github.io/pc-member.html)**, co-located with **[ECAI 2023](https://ecai2023.eu/)**
-    - **[The International Workshop on EXplainable, Trustworthy, and Responsible AI and Multi-Agent Systems (EXTRAAMAS) 2023](https://extraamas.ehealth.hevs.ch/organization.html)**
-    - **[Transdisciplinary AI (TransAI) 2023](https://semanticcomputing.wixsite.com/transai-2023)**
+Program committee and chair roles are now listed on the [Service]({{ '/service/' | relative_url }}) page.
 
-
-  - *Publication and Registration Chair*
-    - **[The International Symposium on Multimedia (ISM) 2022](https://semanticcomputing.wixsite.com/ism2022/organizers)**
-  

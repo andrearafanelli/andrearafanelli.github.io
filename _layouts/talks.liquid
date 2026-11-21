@@ -2,19 +2,44 @@
 layout: page
 ---
 
-<div class="talks-container">
+<ol class="talks-container">
   {% for talk in page.talks %}
-    <div class="talk-item">
-      <h3 class="talk-title">{{ talk.title }}</h3>
-      <p class="talk-date">{{ talk.date }}</p>
-      <p class="talk-description">{{ talk.description }}</p>
-      <div class="talk-links">
-        {% for item in talk.links %}
-          <a href="{{ item.url }}" target="_blank" class="talk-link">
-            {{ item.label }}
-          </a>
-        {% endfor %}
+    {% assign first_link = talk.links | first %}
+    {% if first_link.url contains '://' %}
+      {% assign first_url = first_link.url %}
+    {% else %}
+      {% assign first_url = first_link.url | relative_url %}
+    {% endif %}
+    <li class="talk-item">
+      <div class="talk-date">{{ talk.date | date: '%b %Y' }}</div>
+      <div class="talk-thumb">
+        {% if talk.image %}
+          {% if first_link %}<a href="{{ first_url }}" target="_blank">{% endif %}
+          <img src="{{ talk.image | prepend: '/assets/img/talks/' | relative_url }}" alt="First slide of the presentation" loading="lazy">
+          {% if first_link %}</a>{% endif %}
+        {% else %}
+          <div class="talk-thumb-placeholder" aria-hidden="true"><i class="fa-solid fa-person-chalkboard"></i></div>
+        {% endif %}
       </div>
-    </div>
+      <div class="talk-body">
+        {% if talk.type %}
+          <span class="talk-type">{{ talk.type }}</span>
+        {% endif %}
+        <h3 class="talk-title">{{ talk.title }}</h3>
+        <p class="talk-description">{{ talk.description }}</p>
+        {% if talk.links %}
+          <div class="talk-links">
+            {% for item in talk.links %}
+              {% if item.url contains '://' %}
+                {% assign item_url = item.url %}
+              {% else %}
+                {% assign item_url = item.url | relative_url %}
+              {% endif %}
+              <a href="{{ item_url }}" target="_blank" class="talk-link">{{ item.label }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </li>
   {% endfor %}
-</div>
+</ol>
