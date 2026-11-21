@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: 
 nav: true
-nav_order: 4
+nav_order: 1
 ---
 
 <!-- _pages/publications.md -->
@@ -15,6 +15,6 @@ nav_order: 4
 
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --group_by year --group_order descending %}
 
 </div>

@@ -1,0 +1,84 @@
+<!-- Profile sidebar, shown on the about page and on every page using the `page` layout -->
+{% assign about_page = site.pages | where: 'permalink', '/' | first %}
+{% assign profile = about_page.profile %}
+{% assign socials = site.data.socials %}
+
+<aside class="profile-sidebar{% if page.permalink != '/' %} profile-sidebar-compact{% endif %}">
+  {% if profile.image %}
+    <div class="sidebar-photo">
+      {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+      {% if profile.image_circular %}
+        {% assign profile_image_class = 'img-fluid rounded-circle' %}
+      {% else %}
+        {% assign profile_image_class = 'img-fluid rounded' %}
+      {% endif %}
+      {% capture profile_alt %}{{ site.first_name }} {{ site.last_name }}{% endcapture %}
+      {%
+        include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=profile_alt cache_bust=true
+      %}
+    </div>
+  {% endif %}
+
+  <div class="sidebar-identity">
+    <p class="sidebar-name">
+      {%- if site.title == 'blank' -%}
+        {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
+      {%- else -%}
+        {{ site.title }}
+      {%- endif -%}
+    </p>
+    <p class="sidebar-role">{{ profile.title | default: 'Postdoctoral Researcher' }}</p>
+  </div>
+
+  <ul class="sidebar-links">
+    {% if profile.location %}
+      <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>{{ profile.location }}</span></li>
+    {% endif %}
+    {% if profile.affiliation %}
+      <li><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span>{{ profile.affiliation }}</span></li>
+    {% endif %}
+    {% if socials.email %}
+      <li>
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:{{ socials.email | encode_email }}">Email</a>
+      </li>
+    {% endif %}
+    {% if socials.scholar_userid %}
+      <li>
+        <i class="ai ai-google-scholar" aria-hidden="true"></i
+        ><a href="https://scholar.google.com/citations?user={{ socials.scholar_userid }}">Google Scholar</a>
+      </li>
+    {% endif %}
+    {% if socials.dblp_url %}
+      <li><i class="ai ai-dblp" aria-hidden="true"></i><a href="{{ socials.dblp_url }}">DBLP</a></li>
+    {% endif %}
+    {% if socials.orcid_id %}
+      <li><i class="ai ai-orcid" aria-hidden="true"></i><a href="https://orcid.org/{{ socials.orcid_id }}">ORCID</a></li>
+    {% endif %}
+    {% if socials.github_username %}
+      <li><i class="fa-brands fa-github" aria-hidden="true"></i><a href="https://github.com/{{ socials.github_username }}">GitHub</a></li>
+    {% endif %}
+    {% if socials.linkedin_username %}
+      <li>
+        <i class="fa-brands fa-linkedin" aria-hidden="true"></i
+        ><a href="https://www.linkedin.com/in/{{ socials.linkedin_username }}">LinkedIn</a>
+      </li>
+    {% endif %}
+    <li>
+      <i class="fa-solid fa-file-pdf" aria-hidden="true"></i
+      ><a href="{{ '/assets/pdf/Curriculum.pdf' | relative_url }}" target="_blank">Curriculum Vitae</a>
+    </li>
+  </ul>
+
+  <!-- Research Interests Tags -->
+  <div class="research-interests-tags">
+    <p class="interests-label">Research Interests</p>
+    <div class="interests-tags-container">
+      <span class="interest-tag">Machine Learning</span>
+      <span class="interest-tag">AI in Cardiology</span>
+      <span class="interest-tag">Translational AI</span>
+      <span class="interest-tag">Neuro-Symbolic AI</span>
+      <span class="interest-tag">Multi-Agent Systems</span>
+      <span class="interest-tag">Human-AI Teaming</span>
+    </div>
+  </div>
+</aside>

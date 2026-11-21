@@ -1,127 +1,79 @@
 ---
 layout: default
 ---
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<div class="site-layout">
+  {% include sidebar.liquid %}
 
-<style>
-  /* Override container for about page to use full width */
-  .container {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-</style>
-
-<!-- Hero Section -->
-<section class="about-hero">
-  <div class="hero-grid">
-    {% if page.profile %}
-      <div class="profile-card">
-        {% if page.profile.image %}
-          <div class="profile-image-wrapper">
-            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-            {% if page.profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid rounded' %}
-            {% endif %}
-            {%
-              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=page.profile.image cache_bust=true
-            %}
-          </div>
+  <div class="site-main">
+    <!-- Bio -->
+    <section class="about-intro">
+      <header class="page-header">
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+          <p class="page-subtitle">{{ page.subtitle }}</p>
         {% endif %}
-        <p class="profile-title">Postdoctoral Researcher</p>
-        
-        {% if page.social %}
-          <div class="social" style="margin-top: 1rem;">
-            {% include social.liquid %}
-          </div>
-        {% endif %}
-        
-        <!-- Research Interests Tags -->
-        <div class="research-interests-tags">
-          <p class="interests-label">Research Interests</p>
-          <div class="interests-tags-container">
-            <span class="interest-tag tag-1">Machine Learning</span>
-            <span class="interest-tag tag-2">Deep Learning</span>
-            <span class="interest-tag tag-3">Neuro-Symbolic AI</span>
-            <span class="interest-tag tag-4">AI4Good</span>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-    
-    <div class="hero-content">
-      <h1>
-        {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </h1>
-      <p class="tagline">{{ page.subtitle }}</p>
-      <div class="hero-bio">
+      </header>
+      <div class="about-bio">
         {{ content }}
       </div>
-      <div class="cta-buttons">
-        <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">View Publications</a>
-        <a href="{{ '/assets/pdf/Curriculum.pdf' | relative_url }}" target="_blank" class="btn btn-secondary">Download CV</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Selected Papers Section -->
-{% if page.selected_papers %}
-{% assign selected_papers = site.bibliography | where: "selected", "true" %}
-{% if selected_papers.size > 0 %}
-<section class="publications-section">
-  <h2 class="section-title">Selected Publications</h2>
-  {% include selected_papers.liquid %}
-</section>
-{% endif %}
-{% endif %}
+    <!-- Selected Papers Section -->
+    {% if page.selected_papers %}
+      {% assign selected_papers = site.bibliography | where: 'selected', 'true' %}
+      {% if selected_papers.size > 0 %}
+        <section class="home-section publications-section">
+          <h2 class="section-title">Selected Publications</h2>
+          {% include selected_papers.liquid %}
+          <p class="section-more"><a href="{{ '/publications/' | relative_url }}">All publications &rarr;</a></p>
+        </section>
+      {% endif %}
+    {% endif %}
 
-<!-- Latest Posts -->
-{% if page.latest_posts and page.latest_posts.enabled %}
-<section class="interests-section">
-  <h2 class="section-title">Latest Posts</h2>
-  <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);">
-    {% include latest_posts.liquid %}
-  </div>
-</section>
-{% endif %}
+    <!-- Latest Posts -->
+    {% if page.latest_posts and page.latest_posts.enabled %}
+      <section class="home-section">
+        <h2 class="section-title">Latest Posts</h2>
+        {% include latest_posts.liquid %}
+      </section>
+    {% endif %}
 
-<!-- Selected Projects -->
-{% if page.selected_projects %}
-{% assign selected_projects = site.projects | where: "selected", "true" %}
-{% if selected_projects.size > 0 %}
-<section class="interests-section">
-  <h2 class="section-title">Selected Projects</h2>
-  <div class="interests-grid">
-    {% for project in selected_projects limit: 4 %}
-      <div class="interest-item">
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        {% if project.tags %}
-          <div style="margin-top: 0.5rem;">
-            {% for tag in project.tags %}
-              <span class="badge">{{ tag }}</span>
+    <!-- Selected Projects -->
+    {% if page.selected_projects %}
+      {% assign selected_projects = site.projects | where: 'selected', 'true' %}
+      {% if selected_projects.size > 0 %}
+        <section class="home-section">
+          <h2 class="section-title">Selected Projects</h2>
+          <ul class="project-list">
+            {% for project in selected_projects limit: 4 %}
+              <li>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                {% if project.tags %}
+                  <div>
+                    {% for tag in project.tags %}
+                      <span class="badge">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </li>
             {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-{% endif %}
+          </ul>
+        </section>
+      {% endif %}
+    {% endif %}
 
-<!-- News -->
-{% if page.announcements and page.announcements.enabled %}
-<section class="interests-section">
-  <h2 class="section-title">News & Announcements</h2>
-  <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(199, 53, 126, 0.08);">
-    {% include news.liquid limit=page.announcements.limit %}
+    <!-- News -->
+    {% if page.announcements and page.announcements.enabled %}
+      <section class="home-section">
+        <h2 class="section-title">Recent News</h2>
+        {% include news.liquid limit=page.announcements.limit %}
+        {% if site.data.socials.linkedin_username %}
+          <p class="section-more">
+            <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}">More updates on LinkedIn &rarr;</a>
+          </p>
+        {% endif %}
+      </section>
+    {% endif %}
   </div>
-</section>
-{% endif %}
+</div>
