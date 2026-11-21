@@ -52,7 +52,7 @@ socials_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 1140px
+max_width: 71.25rem # 1140px at the default text size; scales up on large screens (see _sass/_professional.scss)
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
