@@ -54,6 +54,9 @@ ninja.data = [{
           section: "News",},{id: "news-presented-our-poster-periscope-machine-learning-models-for-predicting-mortality-in-patients-with-stemi-following-pci-at-the-esc-digital-amp-amp-ai-summit-2026-in-basel",
           title: 'Presented our poster PERISCOPE: machine-learning models for predicting mortality in patients with STEMI...',
           description: "",
+          section: "News",},{id: "news-interviewed-for-the-esc-press-release-on-our-periscope-study-machine-learning-models-accurately-predict-mortality-after-a-heart-attack",
+          title: 'Interviewed for the ESC press release on our PERISCOPE study: Machine-learning models accurately...',
+          description: "",
           section: "News",},{
         id: 'social-linkedin',
         title: 'LinkedIn',
