@@ -465,6 +465,11 @@ a {
     --kind: #8a6a00;
     --kind-soft: #f7efd2;
   }
+
+  &.news-press {
+    --kind: #b3263e;
+    --kind-soft: #fbe7ea;
+  }
 }
 
 .news-icon {
@@ -931,53 +936,68 @@ a {
 // SERVICE
 // ============================================================================
 
-.service-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 0.5rem;
+// One row per venue: short name | full name | count badge + years
+.service-table {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
 
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 0.75rem 0;
+.service-row {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) auto;
+  column-gap: 1.25rem;
+  align-items: baseline;
+  padding: 0.7rem 1rem;
 
-    & + li {
-      border-top: 1px solid var(--rule);
+  & + .service-row {
+    border-top: 1px solid var(--rule);
+  }
+}
+
+.service-short {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+a.service-short:hover {
+  color: var(--accent);
+}
+
+.service-full {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.service-when {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.service-count {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--accent);
+  background-color: var(--accent-soft);
+  border-radius: 999px;
+}
+
+// Narrow main column: full name moves under the short name
+@container (max-width: 32.5rem) {
+  .service-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    .service-full {
+      grid-column: 1 / -1;
+      grid-row: 2;
     }
-  }
-
-  .service-entry {
-    min-width: 0;
-  }
-
-  .service-name {
-    font-weight: 600;
-  }
-
-  .service-location {
-    color: var(--ink-muted);
-
-    &::before {
-      content: "\00B7";
-      margin: 0 0.45rem;
-      color: var(--ink-faint);
-    }
-  }
-
-  .service-detail {
-    display: block;
-    font-size: 0.92rem;
-    color: var(--ink-muted);
-  }
-
-  .service-year {
-    flex: 0 0 auto;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--ink-muted);
-    white-space: nowrap;
   }
 }
 

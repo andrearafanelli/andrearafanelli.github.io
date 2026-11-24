@@ -24,6 +24,8 @@
               {% assign news_icon = 'fa-solid fa-briefcase' %}{% assign news_label = 'Career' %}
             {% when 'phd' %}
               {% assign news_icon = 'fa-solid fa-graduation-cap' %}{% assign news_label = 'PhD' %}
+            {% when 'press' %}
+              {% assign news_icon = 'fa-solid fa-newspaper' %}{% assign news_label = 'Press' %}
             {% else %}
               {% assign news_icon = 'fa-solid fa-bullhorn' %}{% assign news_label = 'News' %}
           {% endcase %}
